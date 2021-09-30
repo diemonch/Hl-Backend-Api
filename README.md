@@ -39,7 +39,7 @@ This must be supplied in the headers for Creation service
  In postman, supply the token value from the login as a bearer.
  in header section, add key as Authorization and supply the above Key
 
-Other protected routes:
+Other  routes checks for current user:
 '/api/markFavoriteApartment', '/api/listFavoriteApartment'
 
 ###### Soft Test #############
