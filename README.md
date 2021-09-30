@@ -44,7 +44,8 @@ This must be supplied in the headers for Creation service
 
 ###### Protected Route ########
 
- '/api/create' is for creating an Apartment 
+ '/api/create' is for creating an Apartment.
+ 
  In postman, supply the token value from the login as a bearer.
  in header section, add key as Authorization and supply the above Key
 
