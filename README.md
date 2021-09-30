@@ -126,6 +126,7 @@ POST: /api/markFavoriteApartment
 
 GET: /api/listFavoriteApartment
 
-##### end point tets ######
+##### end point tets with Mocha ######
+  
 npm test
 it tests for end point /api/findApartmentListbyCity and validates if returns successfully.
