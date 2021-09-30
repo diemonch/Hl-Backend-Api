@@ -8,7 +8,7 @@ Api for Home Like Assignment
 
 - npm install
 
-####### Project Set Up #########
+####### Project Structure #########
 Hl-Backend-Api
 
   |_test_ : test file for POC with Mocha
@@ -54,23 +54,77 @@ Other  routes checks for current user:
 ###### Soft Test #############
 
 Soft test can be done via Postman, the end points are 
-/api/register
 
-/api/login
+POST: /api/register
 
-/api/create 
+{
+    "name":String
+    "email":String
+    "password":String
+}
 
-/api/findApartmentListbyGeoandDistance
+GET: /api/login
 
-/api/findApartmentListbyCity
+{
+    "username":String,
+    "password":Strig
+}
 
-/api/findApartmentListbyCountry
+POST:/api/create 
 
-/api/findApartmentListbyCityCountryRooms
+Header:
+Autherization: Bearer <token>
 
-/api/markFavoriteApartment
+{
+  "location":{
+            "address":String,
+            "street":String,
+            "city":String,
+            "country":String,
+            "postal":String,
+            "type":"Point",
+            "coordinates":[Number,Number]
+              },
+            "accomodation":{
+                "bedroom":Number
+            }
+}
 
-/api/listFavoriteApartment
+GET: /api/findApartmentListbyGeoandDistance
+  
+  {
+
+    "type":String
+     "long":Number,
+     "lat":Number,
+     "distance":Number
+ }
+
+GET: /api/findApartmentListbyCity
+
+  {
+    "city" :String
+ }
+  
+GET: /api/findApartmentListbyCountry
+
+  {
+    "country" :String
+  }
+  
+GET: /api/findApartmentListbyCityCountryRooms
+
+  {
+    "city":String,
+    "country":String,
+    "bedroom":number
+}
+  
+POST: /api/markFavoriteApartment
+
+{_id:Objectid}
+
+GET: /api/listFavoriteApartment
 
 ##### end point tets ######
 npm test
