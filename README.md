@@ -11,10 +11,15 @@ Api for Home Like Assignment
 ####### Project Set Up #########
 Hl-Backend-Api
   |_test_ : test file for POC with Mocha
+  
   |config : server, token and port config
+  
   |controller: implementation of services
+  
   |middleware: auth verification and get current user
+  
   |model: schema design for aprtment and user
+  
   |routes: connecting end ppints with services
 app.js : server
 
