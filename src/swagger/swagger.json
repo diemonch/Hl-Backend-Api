@@ -1,0 +1,196 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Arrive Coding Task Node JS API",
+      "description": "API end Points description"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "tags": [
+      {
+        "name": "List of End Points",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/addUser": {
+        "post": {
+          "tags": [
+            "Add Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+     
+
+      "/addHobby": {
+        "post": {
+          "tags": [
+            "Add a user hobby"
+          ],
+          "summary": "Get all users",
+          "parameters": [
+            {
+              "passionLevel": "High",
+              "name": "name",
+              "year": "2020",
+              "in": "body",
+              "description": "Hobbies that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Hobby"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Hobby is craeted",
+              "schema": {
+                "$ref": "#/definitions/Hobby"
+              }
+            }
+          }
+        }
+        
+      },
+      
+        "/deleteUserHobby/:id": {
+            "get": {
+              "tags": [
+                "Delete a user hobby"
+              ],
+              "parameters": [
+                {
+                  "id": "id",
+                  "in": "params",
+                  "description": "User Hobby that we want to delete",
+                  "schema": {
+                    "$ref": "#/definitions/Hobby"
+                  }
+                }
+              ],
+              "summary": "Delete a Hobbies",
+              "responses": {
+                "200": {
+                  "description": "Hobby deleted",
+                  "schema": {
+                    "$ref": "#/definitions/Hobby"
+                  }
+                }
+              }
+            }
+            
+          },
+      "/fetchUsers": {
+        "get": {
+          "tags": [
+            "Fetch user list"
+          ],
+          "summary": "Get all users",
+          "responses": {
+            "200": {
+              "description": "User list is found",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+        
+      },
+      "/fetchUserHobbies/:id": {
+        "get": {
+          "tags": [
+            "Get all user hobbies"
+          ],
+          "parameters": [
+            {
+              "id": "id",
+              "in": "params",
+              "description": "User that we want to load hobbies",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "summary": "Get all Hobbies",
+          "responses": {
+            "200": {
+              "description": "Hobby list is found",
+              "schema": {
+                "$ref": "#/definitions/Hobby"
+              }
+            }
+          }
+        }
+        
+      }
+
+
+      
+    },
+    "definitions": {
+      "User": {
+        "required": [
+          "name"
+        ],
+        "properties": {
+         "id":{
+             "type":"string"
+         },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Hobby": {
+        "required": [
+         "passionLevel",
+          "name",
+          "year"
+        ],
+        "properties": {
+         
+        "passionLevel": {
+                "type": "string"
+              },
+          "name": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
